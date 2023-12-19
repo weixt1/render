@@ -18,8 +18,6 @@ RUN yum install -y curl wget tar bzip2 unzip vim-enhanced passwd sudo yum-utils 
 RUN pip install supervisor  # 安装进程管理工具
 ADD supervisord.conf /etc/supervisord.conf  # 添加进程管理工具的主配置文件到指定目录下，一般是/etc目录
 
-RUN mkdir -p /etc/supervisor.conf.d && \    # 为进程管理工具新建一个目录，用来存放启动其他服务的配置文件
-        mkdir -p /var/log/supervisor            # 新建进程管理日志目录
 
 
 
